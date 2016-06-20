@@ -1,0 +1,24 @@
+{
+    "name": "jemoker/iapppay",
+    "description": "爱贝支付SDK在Laravel5封装包。",
+    "keywords": ["L5", "Laravel 5", "Laravel", "Iapppay", "Iapppay SDK"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jemoker",
+            "email": "i@jemoker.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*",
+        "illuminate/events": "5.*",
+        "illuminate/config": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jemoker\\Iapppay\\": "src/Jemoker/Iapppay/"
+        }
+    },
+    "minimum-stability": "stable"
+}

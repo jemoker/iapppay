@@ -32,13 +32,14 @@ class Iapppay {
 		}else{
 			//     下单成功之后获取 transid
 			$orderReq = array(
-				'transid' => $respJson->transid,
-				'redirecturl' => $this->config['call_back_url'],
-				'paytype' => '403',
-				'cpurl' => $this->config['call_back_url']
+				'tid' => $respJson->transid,
+				'app' => $this->config['appid'],
+				'url_r' => $this->config['call_back_url'],
+				'url_h' => $this->config['call_back_url'],
+				'ptype' => 403
 			);
 
-			$reqData = $iappPayBase->composeReq($orderReq, $this->config['appkey']);
+			$reqData = $iappPayBase->composeReqv2($orderReq, $this->config['appkey']);
 			return $this->config['h5_url'].$reqData;
 		}
 	}

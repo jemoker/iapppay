@@ -157,4 +157,26 @@ class Base
 
 		return $reqData;
 	}
+
+	/**
+	 * 组装request报文
+	 * $reqJson 需要组装的json报文
+	 * $vkey  cp私钥，格式化之前的私钥
+	 * return 返回组装后的报文
+	 */
+	function composeReqv2($reqJson, $vkey)
+	{
+		//获取待签名字符串
+		$content = json_encode($reqJson);
+		//格式化key，建议将格式化后的key保存，直接调用
+		$vkey = $this->formatPriKey($vkey);
+
+		//生成签名
+		$sign = $this->sign($content, $vkey);
+
+		//组装请求报文，目前签名方式只支持RSA这一种
+		$reqData = "data=" . urlencode($content) . "&sign=" . urlencode($sign) . "&signtype=RSA";
+
+		return $reqData;
+	}
 }

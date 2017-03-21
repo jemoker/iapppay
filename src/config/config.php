@@ -23,7 +23,7 @@ return [
 	'subcancel' => 'http://ipay.iapppay.com:9999/payapi/subcancel',
 
 	//H5和PC跳转版支付接口Url
-	'h5_url' => 'https://web.iapppay.com/h5/dpay?',
+	'h5_url' => 'https://web.iapppay.com/h5/d/gateway?',
 
 	//应用编号
 	'appid' => "XXX",
